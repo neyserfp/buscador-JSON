@@ -28,7 +28,7 @@ function mostrarDatos1(method, urlJSON, response, searchData)
                 searchData2 == hotel.categoria ||
                 searchData2 == hotel.pvp )
                 {
-                    hayHotelessions = true;
+                    hayHoteles = true;
 
                     let div0 = document.createElement("div");
                     div0.setAttribute("class", "contenedor2-1");
@@ -72,11 +72,31 @@ function mostrarDatos1(method, urlJSON, response, searchData)
 
                     let img1 = document.createElement("img");
                     img1.setAttribute("class", "imagen1");
+                    img1.setAttribute("alt", hotel.nombre);
                     img1.setAttribute("src", hotel.img);
                     div4.appendChild(img1);
 
                 }
             }
+
+            if(hayHoteles==true)
+            {
+                // Ocultar que no hay resultados
+                contenedor0.classList.remove("visible");
+                contenedor0.classList.add("oculto");
+
+            } else if(hayHoteles==false)
+            {
+                // Limpiar HTML
+                response.innerHTML = "";
+
+                // Ocultar que no hay resultados
+                contenedor0.classList.remove("oculto");
+                contenedor0.classList.add("visible");
+            }
+
+            // Limpiar el campo de texto
+            searchData.value = "";
         }
     };
 
