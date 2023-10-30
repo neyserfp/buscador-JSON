@@ -54,7 +54,7 @@ function mostrarDatos1(method, urlJSON, response, searchData)
 
                     p2 = document.createElement("p");
                     p2.setAttribute("class", "texto1");
-                    p2.textContent = hotel.categoria;
+                    p2.textContent = hotel.categoria + " estrellas";
                     div2.appendChild(p2);
 
                     let div3 = document.createElement("div");
@@ -63,7 +63,7 @@ function mostrarDatos1(method, urlJSON, response, searchData)
 
                     let p3 = document.createElement("p");
                     p3.setAttribute("class", "texto1 marco1 mano1");
-                    p3.textContent = hotel.pvp;
+                    p3.textContent = hotel.pvp + " €";
                     div3.appendChild(p3);
 
                     let div4 = document.createElement("div");
